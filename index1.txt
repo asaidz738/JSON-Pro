@@ -1,0 +1,76 @@
+<head>
+<meta content="noindex" name="robots" /> 
+<meta content="width=device-width" name='"viewport" />
+<title>Saidz Sontoloyo ~ Download Links</title>
+<style type="text/css">
+body { margin: 0; background: #f0f3f7; font-family: Segoe ui; } 
+div#wrapper { width: 720px; margin: 15px auto; background: #fff; box-shadow: rgba(0,53,126,.2) 0 0 2px 0; border-radius: 5px; max-width: calc(100% - 10px); } 
+a, a:link, a:visited, a:hover, a:active {text-decoration: none;} 
+#wrapper img { width: 100%; height: auto;} 
+.post-outer {padding: 21px 15px; text-align: justify;} 
+h1,h2 { margin: 15px; padding: 10px; font-size: 22px; text-shadow: 1px 1px 2px #fff, 2px 2px 3px #888; border-bottom: 5px double #000; border-left: 5px double #000;  text-align: left;} 
+.info {margin: 5px 0 0; padding: 7px; display: block; background: #eee; border-left: 3px solid red; color: #000;}
+.mido {margin-top: 55px; text-align: center; height: 30px; font-weight: bold;} hr { display:block; margin: 13px -7px; border:0px; height:4px; background-image:url('https://1.bp.blogspot.com/-AfUcfv4y8O4/YFBzyml9zfI/AAAAAAAAAXk/GFkBpLUSghMe-CLYXKZZEbCvECD13Lu4wCLcBGAsYHQ/s0/1645679_20130620072057.gif'); } .home-link {display: none;}
+.saidz-embed-container {text-align: center;}
+.modul { padding: 5px; text-align: center; color:#000; margin-top: 20px; line-height:133%}
+.pencet { background: royalblue; color: white; border: 1px solid white;border-radius: 5px; padding: 7px 10px;cursor: pointer; font-weight: bold} .pencet:hover {background: red;}
+.tt, .modul strong, .modul b, .modul h3 {display: block; font-weight: bold; color: red; padding: 7px; margin: 7px 0;background: #eee;}
+.modul a:hover, .modul a:active {color: red; font-weight: bold;}
+.kl {color:#000;font-weight: bold;display:block; margin: 15px 0;}
+.bl {color: blue; text-shadow: 1px 1px 1px #ccc, 1px 2px 2px red;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+function GetURLParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}
+var modul = GetURLParameter('f');
+
+$(document).ready(function(){
+  $("button").click(function(){
+    $.get("/" + atob(modul) +".txt", function(data, status){
+      document.getElementById("modul").innerHTML = ("" + data + "");
+    });
+  });
+});
+</script>
+</head>
+<body>
+<div class="main section" id="wrapper">
+<img alt="" border="0" width="320" data-original-height="260" data-original-width="1170" src="https://1.bp.blogspot.com/-r8zh-QujlgY/YK-Ewm-Y92I/AAAAAAAAAEg/bjMGUbcBKMUCCQz1OozLKUxd6MjeT5LXgCLcBGAsYHQ/s720/saidz-logo-1.png" />
+
+<div class="post-outer">
+<div class="saidz-embed-container">
+<button class="pencet">SHOW LINK</button>
+<div id="modul"  class="modul">
+<div id="success"></div>
+<div id="error"></div>
+</div>
+</div>
+<hr />
+
+<script>
+$( "#success" ).load( "/" + atob(modul) +".txt", function( response, status, xhr ) {
+  if ( status == "error" ) {
+    var msg = "<h1>Sorry but there was an error:</h1>";
+    $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
+  }
+});
+</script>
+</div>
+</div>
+<a href="/" alt="" target="_blank">
+<img src="//sstatic1.histats.com/0.gif?3906269&101" alt="" border="0">
+
+</body>
+</html>
